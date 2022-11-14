@@ -1,0 +1,9 @@
+*linux_amd64*
+terraform.tfvars*
+terraform.tfstate*
+.terraform/*
+*.pub*
+*key
+cert/*
+*/*.crt
+*/*.key
