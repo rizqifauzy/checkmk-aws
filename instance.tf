@@ -1,8 +1,3 @@
-resource "aws_key_pair" "terraform-key" {
-  key_name   = "terraform-key"
-  public_key = file(var.PATH_TO_PUBLIC_KEY)
-}
-
 resource "aws_security_group" "checkmk-sg" {
   name        = "checkmk-sg"
   description = "Security group for checkmk"
@@ -38,7 +33,10 @@ resource "aws_security_group" "checkmk-sg" {
     #ipv6_cidr_blocks = ["::/0"]
   }
 }
-
+resource "aws_key_pair" "terraform-key" {
+  key_name   = "terraform-key"
+  public_key = file(var.PATH_TO_PUBLIC_KEY)
+}
 resource "aws_instance" "checkmk-server" {
   ami           = var.AMIS[var.AWS_REGION]
   instance_type = "c5.xlarge"
