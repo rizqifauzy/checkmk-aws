@@ -2,6 +2,7 @@
 terraform.tfvars*
 terraform.tfstate*
 .terraform/*
+.terraform*
 *.pub*
 *key
 cert/*
